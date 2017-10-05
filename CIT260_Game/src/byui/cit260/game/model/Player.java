@@ -54,15 +54,14 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", time=" + bestTime + ", games=" + games + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
-        hash = 37 * hash + Objects.hashCode(this.games);
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
@@ -84,12 +83,10 @@ public class Player implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.games, other.games)) {
-            return false;
-        }
         return true;
     }
 
+  
     
     
     
