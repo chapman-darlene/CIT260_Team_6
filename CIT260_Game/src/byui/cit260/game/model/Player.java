@@ -60,8 +60,8 @@ public class Player implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
@@ -86,6 +86,7 @@ public class Player implements Serializable{
         return true;
     }
 
+    
   
     
     
