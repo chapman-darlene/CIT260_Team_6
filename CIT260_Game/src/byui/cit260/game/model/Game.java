@@ -5,6 +5,7 @@ package byui.cit260.game.model;
 import byui.cit260.game.model.Player;
 import java.io.Serializable;
 import java.util.Objects;
+import java.lang.Object;
 
 /**
  *
