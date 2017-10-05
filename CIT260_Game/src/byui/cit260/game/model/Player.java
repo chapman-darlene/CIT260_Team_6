@@ -8,6 +8,10 @@ package byui.cit260.game.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.lang.Object;
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -17,7 +21,8 @@ public class Player implements Serializable{
     
     //class instance variables
     private String name;
-    //private ArrayList<Game> games = new ArrayList<Game>();
+    private double bestTime;
+    private ArrayList<Game> games = new ArrayList<Game>();
     
     public Player() {
     }
@@ -30,25 +35,34 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-/*
-    public <Game> getGames() {
+    public double getBestTime() {
+        return bestTime;
+    }
+
+    public void setBestTime(double bestTime) {
+        this.bestTime = bestTime;
+    }
+
+
+    public ArrayList<Game> getGames() {
         return games;
     }
 
-    public void setGames(<Game> games) {
+    public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
-**/
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + '}';
+        return "Player{" + "name=" + name + ", time=" + bestTime + ", games=" + games + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.games);
         return hash;
     }
 
@@ -64,16 +78,19 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
+        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.games, other.games)) {
             return false;
         }
         return true;
     }
+
+    
+    
     
 }
-   
-    
-    
-    //set toString, hashCode, equals
-    
-   
