@@ -36,6 +36,14 @@ public class Map implements Serializable {
     public void setColCount(int colCount) {
         this.colCount = colCount;
     }
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
+    }
     
     
     
