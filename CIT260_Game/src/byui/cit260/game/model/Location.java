@@ -52,6 +52,14 @@ public class Location implements Serializable {
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
     
     
     
