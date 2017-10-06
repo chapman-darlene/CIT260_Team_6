@@ -6,6 +6,8 @@
 package byui.cit260.game.model;
 
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.ArrayList;
 /**
  *
  * @author DC
@@ -14,6 +16,7 @@ public class Map implements Serializable {
     
     private int rowCount;
     private int colCount;
+    private ArrayList<Location> locations = new ArrayList<Location>();
 
     public Map() {
     }
