@@ -16,6 +16,7 @@ public class Location implements Serializable {
     private int column;
     private String description;
     private String symbol;
+    private Map map;
 
     public Location() {
     }
