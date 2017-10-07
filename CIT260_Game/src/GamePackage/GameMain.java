@@ -10,10 +10,12 @@ import byui.cit260.game.model.Game;
 import byui.cit260.game.model.Location;
 import byui.cit260.game.model.Player;
 import byui.cit260.game.model.Map;
+import byui.cit260.game.model.InventoryItem;
 
 /**
  *
- * @author DC
+ * @author DC with the help of rledesma.
+ *
  */
 public class GameMain {
     
