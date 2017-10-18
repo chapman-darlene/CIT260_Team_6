@@ -23,6 +23,7 @@ public class Crops implements Serializable{
     private int pharaohsShare;
     private int fed;
     private int planted;
+    private int acres;
 
     public Crops() {
     }
@@ -106,7 +107,14 @@ public class Crops implements Serializable{
     public void setPlanted(int planted) {
         this.planted = planted;
     }
-    
-    
-    
+
+    public int getAcres() {
+        return acres;
+    }
+
+    public void setAcres(int acres) {
+        this.acres = acres;
+    }
+
+  
 }
