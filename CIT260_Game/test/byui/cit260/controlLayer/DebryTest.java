@@ -26,7 +26,15 @@ public class DebryTest {
  * @author DC
  */
 
-  
+@Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int min = 17;
+        int max = 26;
+        int result = CropsControl.calcLandCost();
+        assertTrue(min <= result && max >= result);    
+    }
+    
 @Test
 public void testBuyLand(){  
     
