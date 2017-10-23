@@ -44,7 +44,7 @@ public class CropsControl {
     
         //if(acresToBuy < 0) return -1
                        
-        if(toBuy < 1)
+        if(toBuy < 0)
             return -1;
         
         //if((acresToBuy * landPrice) > wheatInStore) return -1
@@ -165,8 +165,11 @@ public class CropsControl {
         Can't feed people zero
         Have to have enough wheatInStore
     */
+    
+    private static final int WHEAT_PER_PERSON = 20;
+    
     public int calcStarved(Crops theCrops){
-        int wheatPerPerson = 20;
+        int wheatPerPerson = WHEAT_PER_PERSON;
         int people = theCrops.getPopulation();
         int wheat = theCrops.getWheatInStore();
         int wheatFed = theCrops.getFed();
