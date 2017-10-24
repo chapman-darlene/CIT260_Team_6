@@ -17,6 +17,8 @@ public class Game implements Serializable{
     private double totalTime;
     private int noPeople;
     private Player player;
+    private static Crops theCrops = null;
+    
 
     public Game() {
     }
@@ -45,7 +47,14 @@ public class Game implements Serializable{
         this.player = player;
     }
 
+    public static Crops getCrop(){
+        return theCrops;
+    }
     
+    public static void setCrop(Crops _cropRef){
+        theCrops = _cropRef;
+    }
+
     
     //set toString, hashCode, equals
     
