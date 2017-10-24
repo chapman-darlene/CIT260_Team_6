@@ -82,6 +82,37 @@ public class CropsControlTest {
         }      
 
     @Test
+    public void testFeedPeople() {
+    // we need a crops object with the following values filled in
+        Crops theCrops = new Crops();
+        theCrops.setWheatInStore(2000);
+        
+        int wheatToFedPeople = 50;
+        CropsControl instance = new CropsControl();
+        int expResult = 1950;
+        int result = instance.feedPeople(theCrops, wheatToFedPeople);
+        assertEquals(expResult, result);        
+    }
+    
+    
+		 @Test
+    public void plantCrops() {
+    // we need a crops object with the following values filled in
+        Crops theCrops = new Crops();
+        theCrops.setWheatInStore(2000);
+		theCrops.setAcres(100);
+        
+        
+		int acresToPlant = 80;
+		int wheatToPlant = 40;
+        CropsControl instance = new CropsControl();
+        int expResult = 1960;
+        int result = instance.plantCrops(theCrops, wheatToPlant);
+        assertEquals(expResult, result);        
+    }
+    
+    
+    @Test
     public void testBuyLandThree(){  
 
         System.out.println("***buyLand Test 3***");

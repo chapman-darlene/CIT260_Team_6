@@ -94,7 +94,75 @@ public class CropsControl {
         
         // return wheatInStore
         return wheat;     
-    }  
+    } 
+    
+    /*Feeding the People Method
+    Purpose: set aside wheat from wheatInStore to feed the People
+    Parameters: (wheatInStore, wheatToFedPeople)
+    Returns: wheatInStore
+    Pre-conditions: 
+        Can't use a negative amount
+        wheatInStore > wheatToFedPeople
+    */
+           public int feedPeople(Crops theCrops, int wheatToFedPeople){
+        					
+    String question = "How many bushels of grain do you want to give to the people? ";
+	int wheatToFedPeople = getNumber(question);
+    
+    int wheatInStore = theCrops.getWheatInStore();
+	
+    if(wheatToFedPeople < 0) 
+        return -1;
+    
+    if(wheatToFedPeople > wheatInStore) 
+        return -1;
+    //else wheatInStore = wheatInStore - wheatToFedPeople
+    wheatInStore = wheatInStore - wheatToFedPeople;
+    theCrops.setWheatInStore(wheatInStore);
+            
+     
+     int wheat = theCrops.getWheatInStore();
+         theCrops.setWheatInStore(wheat);
+    // return wheatInStore
+        return wheat;     
+    }
+	
+/*Planting Acres Of Land
+    Purpose: set aside the amount of land and wheat to plan
+    Parameters: (wheatInStore, acresToPlant)
+    Returns: wheatInStore
+    Pre-conditions: 
+        Can't use a negative amount
+        wheatInStore > wheatToPlant
+    */
+           public int plantCrops(Crops theCrops, int acresToPlant){
+        					
+    String question = "How many acres of land do you want to plant? ";
+	int acresToPlant = getNumber(question);
+    int wheatInStore = theCrops.getWheatInStore();
+	int acres = thecrops.getAcres();
+	
+    if(acresToPlant < 0) 
+        return -1;
+    
+	if(acresToPlant > acres) 
+        return -1;
+	
+    if(wheatInStore < acresToPlant / 2) 
+        return -1;
+	
+	int wheatToPlant = acresToPlant / 2; 
+	wheatInStore = wheatInStore - wheatToPlant;
+    theCrops.setWheatInStore(wheatInStore);
+            
+     
+     int wheat = theCrops.getWheatInStore();
+         theCrops.setWheatInStore(wheat);
+    // return wheatInStore
+        return wheat;     
+    }
+    
+    
     
     /*Pay Pharaoh Method
     Purpose: To pay 8% of wheatInStore to Pharaoh
