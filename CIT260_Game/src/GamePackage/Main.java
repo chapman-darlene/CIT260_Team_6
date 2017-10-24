@@ -11,26 +11,20 @@ import byui.cit260.game.model.Location;
 import byui.cit260.game.model.Player;
 import byui.cit260.game.model.Map;
 import byui.cit260.game.model.InventoryItem;
+import byui.cit260.viewLayer.StartProgramView;
 
 /**
  *
  * @author DC with the help of rledesma.
  *
  */
-public class GameMain {
+public class Main {
     
     public static void main(String[] args){
         
-        Player playerOne = new Player();
-        playerOne.setName("Fred Flintstone");
-        playerOne.setBestTime(7.00);
-                
-        String playerOneName = playerOne.getName(); 
-        double playerOneTime = playerOne.getBestTime();
-        
-        System.out.println("Name = " + playerOneName + ", time = " + playerOneTime);
-        
-        System.out.println(playerOne.toString());
+       //call constructor function and instantiate object
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
     }
     
 }
