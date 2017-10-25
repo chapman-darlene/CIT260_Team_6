@@ -19,7 +19,7 @@ public class CropsControl {
      //random number generator
     private static Random random = new Random();
     private static final int LAND_BASE = 17;
-    private static final int LAND_RANGE = 10;
+    private static final int LAND_RANGE = 9;
         
      /*
     calcLandCost() method
@@ -153,30 +153,51 @@ public class CropsControl {
         //String question = "How many acres of land do you want to plant? ";
         //int acresToPlant = getNumber(question);
         int wheatInStore = theCrops.getWheatInStore();
-            int acres = thecrops.getAcres();
+        int acres = theCrops.getAcres();
 
         if(acresToPlant < 0) 
             return -1;
 
-            if(acresToPlant > acres) 
+        if(acresToPlant > acres) 
             return -1;
 
         if(wheatInStore < acresToPlant / 2) 
             return -1;
 
-            int wheatToPlant = acresToPlant / 2; 
-            wheatInStore = wheatInStore - wheatToPlant;
+        int wheatToPlant = acresToPlant / 2; 
+        wheatInStore = wheatInStore - wheatToPlant;
         theCrops.setWheatInStore(wheatInStore);
-
-
-         int wheat = theCrops.getWheatInStore();
-             theCrops.setWheatInStore(wheat);
+      
         // return wheatInStore
-            return wheat; 
-            */
-    
-    
+        return wheatInStore;  
     }
+     
+     /*
+    public static final int HARVEST_YIELD = 1;
+    public static final int HARVEST_YIELD_RANGE = 4;
+    //min is 1 and most is 5
+    
+    public static final double RAT_RATE = .10;
+    public static final double RAT_RATE_RANGE = .05;
+    
+    public static int harvestCrops(Crops theCrops) {
+        int harvest = random.nextInt(HARVEST_YIELD) + HARVEST_YIELD_RANGE;
+        int rats = (int) random.nextDouble(RAT_RATE) + RAT_RATE_RANGE;
+        
+        //theCrops.setHarvest(harvest);
+        return wheat;
+            if(harvestPerAcre < 6) return -1						
+            else						
+            wheatHarvested = harvestPerAcre * acresPlanted						
+            wheatInStore = wheatInStore + wheatHarvested						
+            return wheatInStore
+
+    
+    
+    
+     }
+ */
+    
     
     
     
@@ -205,6 +226,7 @@ public class CropsControl {
         theCrops.setWheatInStore(wheat);
         return wheat;
     }
+   
     
     //Calculate Random New People Moving In 
     private static final int NEW_PEOPLE_IN = 5;

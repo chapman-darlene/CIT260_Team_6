@@ -17,12 +17,12 @@ public class StartProgramView {
     private String promptMessage;
     
     public StartProgramView(){ //return void
-        
+        /* Bro Jackson Code
         //prompt for name
         this.promptMessage = "\nPlease enter your name";
         //call displayBanner method
         this.displayBanner();
-        
+        */
     }
     //create DisplayBanner method
     private void displayBanner() {
