@@ -104,10 +104,10 @@ public class CropsControl {
         Can't use a negative amount
         wheatInStore > wheatToFedPeople
     */
-           public int feedPeople(Crops theCrops, int wheatToFedPeople){
+    public int feedPeople(Crops theCrops, int wheatToFeedPeople){
         					
-    String question = "How many bushels of grain do you want to give to the people? ";
-	int wheatToFedPeople = getNumber(question);
+    /*String question = "How many bushels of grain do you want to give to the people? ";
+    int wheatToFedPeople = getNumber(question);
     
     int wheatInStore = theCrops.getWheatInStore();
 	
@@ -125,8 +125,21 @@ public class CropsControl {
          theCrops.setWheatInStore(wheat);
     // return wheatInStore
         return wheat;     
+    }*/
+    int wheat = theCrops.getWheatInStore();
+    //if(wheatToFedPeople > wheatInStore) return -1
+    if(wheatToFeedPeople > wheat)
+        return -1;
+    
+    //if (wheatInStore < 20) return -1
+    if(wheatToFeedPeople < 0)
+        return -1;
+						
+    wheat = wheat - wheatToFeedPeople;
+    theCrops.setWheatInStore(wheat);
+    return wheat;					
     }
-	
+    
 /*Planting Acres Of Land
     Purpose: set aside the amount of land and wheat to plan
     Parameters: (wheatInStore, acresToPlant)
@@ -135,31 +148,34 @@ public class CropsControl {
         Can't use a negative amount
         wheatInStore > wheatToPlant
     */
-           public int plantCrops(Crops theCrops, int acresToPlant){
+    public int plantCrops(Crops theCrops, int acresToPlant){
         					
-    String question = "How many acres of land do you want to plant? ";
-	int acresToPlant = getNumber(question);
-    int wheatInStore = theCrops.getWheatInStore();
-	int acres = thecrops.getAcres();
-	
-    if(acresToPlant < 0) 
-        return -1;
+        //String question = "How many acres of land do you want to plant? ";
+        //int acresToPlant = getNumber(question);
+        int wheatInStore = theCrops.getWheatInStore();
+            int acres = thecrops.getAcres();
+
+        if(acresToPlant < 0) 
+            return -1;
+
+            if(acresToPlant > acres) 
+            return -1;
+
+        if(wheatInStore < acresToPlant / 2) 
+            return -1;
+
+            int wheatToPlant = acresToPlant / 2; 
+            wheatInStore = wheatInStore - wheatToPlant;
+        theCrops.setWheatInStore(wheatInStore);
+
+
+         int wheat = theCrops.getWheatInStore();
+             theCrops.setWheatInStore(wheat);
+        // return wheatInStore
+            return wheat; 
+            */
     
-	if(acresToPlant > acres) 
-        return -1;
-	
-    if(wheatInStore < acresToPlant / 2) 
-        return -1;
-	
-	int wheatToPlant = acresToPlant / 2; 
-	wheatInStore = wheatInStore - wheatToPlant;
-    theCrops.setWheatInStore(wheatInStore);
-            
-     
-     int wheat = theCrops.getWheatInStore();
-         theCrops.setWheatInStore(wheat);
-    // return wheatInStore
-        return wheat;     
+    
     }
     
     
