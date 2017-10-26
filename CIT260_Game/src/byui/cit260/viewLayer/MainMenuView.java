@@ -112,7 +112,7 @@ public class MainMenuView {
     }
 
     private void quitGame() {
-        System.out.println("The quitGame() Method goes here");
+        System.out.println("Goodbye...Thanks for playing.");
     }
     
    

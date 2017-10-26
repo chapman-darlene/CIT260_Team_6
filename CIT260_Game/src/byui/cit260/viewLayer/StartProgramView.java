@@ -55,8 +55,8 @@ public class StartProgramView {
         GameControl.createCrops();
         
         System.out.println("\n\n"
-                + "As the overseer for your village, you need to make sure are"
-                + "well fed. If you do not, you may lose your head!");
+                + "As the overseer for your village, you need to make sure all "
+                + "are well fed. If you do not, you may lose your head!");
         
         displayNextView();
     }
@@ -85,7 +85,7 @@ public class StartProgramView {
         MainMenuView mainMenuView = new MainMenuView();//need to create MainMenuView class.
         mainMenuView.displayMainMenuView();
         
-       System.out.println("Goodbye...Thanks for playing.");
+       
         
   }
    
