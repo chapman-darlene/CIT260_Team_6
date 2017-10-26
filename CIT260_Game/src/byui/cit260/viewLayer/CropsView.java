@@ -18,10 +18,10 @@ public class CropsView {
     //code from DeBry
     private static Scanner keyboard = new Scanner(System.in);
     
-    //private static Game theGame = Game.getGame();
+    private static Game theGame = Game.getGame();
     private static Crops theCrops = Game.getCrop();
-    
-    public void buyLandView(){
+
+    public static void buyLandView(){
         //call crops class
         
        int toBuy = 0;
@@ -48,12 +48,6 @@ public class CropsView {
        } while(toBuy < 0 || toBuy * price > wheat);
        
        CropsControl.buyLand(theCrops, toBuy, price);
-}
-
-               
-               
-               
-  
     }
-
+    
 }

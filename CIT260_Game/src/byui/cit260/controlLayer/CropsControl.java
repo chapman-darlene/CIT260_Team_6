@@ -40,7 +40,7 @@ public class CropsControl {
         AcresToBuy buy must be positive
         BushelsInStore > (acresToBuy * price)
     */
-    public int buyLand(Crops theCrops, int toBuy, int landCost){
+    public static int buyLand(Crops theCrops, int toBuy, int landCost){
     
         //if(acresToBuy < 0) return -1
                        

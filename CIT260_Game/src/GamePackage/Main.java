@@ -20,11 +20,32 @@ import byui.cit260.viewLayer.StartProgramView;
  */
 public class Main {
     
+    private static Game currentGame = null;
+    private static Player Player = null;
+    
     public static void main(String[] args){
         
        //call constructor function and instantiate object
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
+             
     }
+
+     public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Main.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return Player;
+    }
+
+    public static void setPlayer(Player Player) {
+        Main.Player = Player;
+    }
+    
     
 }

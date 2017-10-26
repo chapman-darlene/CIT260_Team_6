@@ -17,6 +17,7 @@ import byui.cit260.game.model.Player;
 public class GameControl {
     
         public static void createPlayer(String playerName) {
+            
             Player player = new Player();
             player.setName(playerName);
         }
@@ -44,6 +45,10 @@ public class GameControl {
 
         Game.setCrop(theCrops);
 }
+
+    public static void createNewGame(Player player) {
+        System.out.println("The createNewGame() Method goes here");
+    }
 
 
         

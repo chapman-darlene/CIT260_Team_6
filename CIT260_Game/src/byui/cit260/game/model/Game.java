@@ -2,6 +2,7 @@ package byui.cit260.game.model;
 
 
 
+import GamePackage.Main;
 import byui.cit260.game.model.Player;
 import java.io.Serializable;
 import java.util.Objects;
@@ -17,8 +18,11 @@ public class Game implements Serializable{
     private double totalTime;
     private int noPeople;
     private Player player;
-    private static Crops theCrops = null;
     
+    //Is this how we should setup theGame variable?
+    private static Game theGame = null;
+    private static Crops theCrops = null;
+        
 
     public Game() {
     }
@@ -55,6 +59,17 @@ public class Game implements Serializable{
         theCrops = _cropRef;
     }
 
+    
+    //is this what we should do for this variable?
+    public static Game getGame(){
+        return theGame;
+    }
+    
+    public static void setGame(Game _gameRef){
+        theGame = _gameRef;
+    }
+
+     
     
     //set toString, hashCode, equals
     
