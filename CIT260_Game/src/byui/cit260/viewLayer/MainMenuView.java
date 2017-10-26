@@ -39,14 +39,12 @@ public class MainMenuView {
         
         int option;
         int inputValue;
-        do
-        {
+       
             System.out.println(menu);
             option = getMenuOption();
-            //inputValue = option;
+            inputValue = option;
            
-            //inputValue = doAction(inputValue);
-        }while(option != MAX || option >= MAX );
+            inputValue = doAction(inputValue);
         
     }
     
@@ -57,7 +55,7 @@ public class MainMenuView {
         {
           System.out.print("Please enter an option:");
           inputValue = keyboard.nextInt();
-          inputValue = doAction(inputValue);
+          //inputValue = doAction(inputValue);
           if(inputValue < 1 || inputValue >= MAX)
           {
               System.out.println("Error: invalid option.");
@@ -97,6 +95,8 @@ public class MainMenuView {
     private void startNewGame() {
         //System.out.println("The startNewGame() Method goes here");
         GameControl.createNewGame(Main.getPlayer());
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
