@@ -152,7 +152,7 @@ public class CropsControl {
         					
         //String question = "How many acres of land do you want to plant? ";
         //int acresToPlant = getNumber(question);
-        int wheatInStore = theCrops.getWheatInStore();
+        int wheat = theCrops.getWheatInStore();
         int acres = theCrops.getAcres();
 
         if(acresToPlant < 0) 
@@ -161,42 +161,40 @@ public class CropsControl {
         if(acresToPlant > acres) 
             return -1;
 
-        if(wheatInStore < acresToPlant / 2) 
+        if(wheat < acresToPlant / 2) 
             return -1;
 
         int wheatToPlant = acresToPlant / 2; 
-        wheatInStore = wheatInStore - wheatToPlant;
-        theCrops.setWheatInStore(wheatInStore);
+        wheat = wheat - wheatToPlant;
+        theCrops.setWheatInStore(wheat);
+        theCrops.setAcresToPlant(acresToPlant);
       
         // return wheatInStore
-        return wheatInStore;  
+        return wheat;  
     }
      
-     /*
+    //Calculate Random number of wheat harvest per acre planted  
     public static final int HARVEST_YIELD = 1;
     public static final int HARVEST_YIELD_RANGE = 4;
     //min is 1 and most is 5
     
-    public static final double RAT_RATE = .10;
-    public static final double RAT_RATE_RANGE = .05;
+    /*public static final double RAT_RATE = .10;
+    public static final double RAT_RATE_RANGE = .05;*/
     
     public static int harvestCrops(Crops theCrops) {
-        int harvest = random.nextInt(HARVEST_YIELD) + HARVEST_YIELD_RANGE;
-        int rats = (int) random.nextDouble(RAT_RATE) + RAT_RATE_RANGE;
         
-        //theCrops.setHarvest(harvest);
+        int wheat = theCrops.getWheatInStore();
+        int acresToPlant = theCrops.getAcresToPlant();
+        int harvest = random.nextInt(HARVEST_YIELD_RANGE) + HARVEST_YIELD;
+        //int rats = (int) random.nextDouble(RAT_RATE_RANGE) + RAT_RATE;
+        theCrops.setHarvest(harvest);
+               
+        int wheatHarvested = harvest * acresToPlant;
+        wheat = wheat + wheatHarvested;
+        theCrops.setWheatInStore(wheat);
         return wheat;
-            if(harvestPerAcre < 6) return -1						
-            else						
-            wheatHarvested = harvestPerAcre * acresPlanted						
-            wheatInStore = wheatInStore + wheatHarvested						
-            return wheatInStore
-
-    
-    
-    
-     }
- */
+    }
+ 
     
     
     
